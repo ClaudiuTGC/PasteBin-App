@@ -1,0 +1,15 @@
+
+{% block title%}<h1>Please create your account!</h1>{% endblock %}
+
+{% block content %}
+<body style="background-color: lightblue">
+<form method="POST" class="form-group">
+	{% csrf_token %}
+	{{form.as_p}}
+	<button type="submit" class="btn btn-succes">Register</button>
+</form>
+    <div>
+        <h3>You have already an account? Then sign in <a href="/login">here</a></h3>
+    </div>
+</body>
+{% endblock %}

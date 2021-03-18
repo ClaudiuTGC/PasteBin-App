@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pastebin</title>
+</head>
+<body>
+	<center>
+	{% block content %}
+	<form method="POST">
+		{% csrf_token %}
+		{{ form.as_p }}
+		<input type="submit" value="save">
+	</form>
+	<div>
+		{% for message in messages%}
+			<p> {{ message }} </p>
+		{% endfor %}
+        <h3>If you want to see your list of bins, press <a href="/yourbins">here</a></h3>
+		}
+    </div>
+    </center>
+{% endblock %}
+</body>
+</html>
